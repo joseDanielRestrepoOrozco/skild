@@ -1,4 +1,4 @@
-/** biome-ignore-all lint/security/noDangerouslySetInnerHtml: <explanation> */
+/** biome-ignore-all lint/security/noDangerouslySetInnerHtml: THEME_INIT_SCRIPT is a static constant with no user input, safe from XSS */
 import type { QueryClient } from '@tanstack/react-query';
 import {
 	createRootRouteWithContext,

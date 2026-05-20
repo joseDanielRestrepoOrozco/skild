@@ -20,9 +20,9 @@ const SkillCard = ({
 }: SkillsRecord) => {
 	const [copied, setCopied] = useState(false);
 
-	const handleCopy = () => {
+	const handleCopy = async () => {
 		try {
-			navigator.clipboard.writeText(installCommand);
+			await navigator.clipboard.writeText(installCommand);
 			setCopied(true);
 			setTimeout(() => setCopied(false), 2000);
 		} catch {
