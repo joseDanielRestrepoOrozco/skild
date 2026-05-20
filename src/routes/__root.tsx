@@ -1,4 +1,6 @@
 /** biome-ignore-all lint/security/noDangerouslySetInnerHtml: THEME_INIT_SCRIPT is a static constant with no user input, safe from XSS */
+
+import { ClerkProvider } from '@clerk/tanstack-react-start';
 import type { QueryClient } from '@tanstack/react-query';
 import {
 	createRootRouteWithContext,
@@ -7,7 +9,6 @@ import {
 } from '@tanstack/react-router';
 import Crosshair from '#/components/Crosshair';
 import NavBar from '#/components/NavBar';
-import ClerkProvider from '../integrations/clerk/provider';
 import appCss from '../styles.css?url';
 
 interface MyRouterContext {

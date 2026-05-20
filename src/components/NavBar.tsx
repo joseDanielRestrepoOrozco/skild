@@ -1,3 +1,4 @@
+import { Show, SignInButton, UserButton } from '@clerk/tanstack-react-start';
 import { Link } from '@tanstack/react-router';
 import { LogIn } from 'lucide-react';
 
@@ -13,10 +14,17 @@ const NavBar = () => {
 				</Link>
 			</div>
 			<div className="actions">
-				<Link to="/sign-in/$" className="btn-primary">
-					<LogIn size="16" />
-					Sign in
-				</Link>
+				<Show when="signed-in">
+					<UserButton />
+				</Show>
+				<Show when="signed-out">
+					<Link to="/sign-in/$" className="btn-primary">
+						<LogIn size="16" />
+						Sign in
+					</Link>
+					{/* Esto muestra el modal por defecto que proporciona clerk para autentificarse */}
+					{/* <SignInButton mode="modal" /> */}
+				</Show>
 			</div>
 		</nav>
 	);
